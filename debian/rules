@@ -2,3 +2,9 @@
 
 %:
 	dh $@
+
+override_dh_auto_build:
+	mkdir -p base extra
+	debian/cn Px437*/*.ttf
+	debian/cn PxPlus*/*.ttf
+	for x in `cat debian/base`; do mv extra/Px_"$$x".ttf base/; done
