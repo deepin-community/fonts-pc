@@ -1,0 +1,5 @@
+#!/usr/bin/fontforge -quiet
+
+Open($argv[1])
+SetFontNames($argv[2], $argv[3], $argv[3])
+Generate("extra/" + $argv[2] + ".ttf")
